@@ -1,0 +1,21 @@
+type Testimonial = 
+ record {
+   author: text;
+   content: text;
+   rating: nat;
+ };
+type Project = 
+ record {
+   category: text;
+   description: text;
+   id: text;
+   imageUrl: text;
+   title: text;
+ };
+service : {
+  addProject: (Project) -> ();
+  addTestimonial: (Testimonial) -> ();
+  getProjects: () -> (vec Project) query;
+  getTestimonials: () -> (vec Testimonial) query;
+  submitContact: (text, text, text) -> ();
+}
